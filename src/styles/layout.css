@@ -1,0 +1,103 @@
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in oklab, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.brand-name {
+    text-transform: lowercase;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav a {
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--muted);
+}
+
+.nav a.active {
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+@media (min-width: 880px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

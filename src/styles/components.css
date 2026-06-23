@@ -1,0 +1,269 @@
+.btn {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .08s ease, background .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0px);
+}
+
+.btn.primary {
+    background: var(--primary);
+    border-color: color-mix(in oklab, var(--primary) 70%, var(--border));
+    color: #07120f;
+    font-weight: 700;
+}
+
+.btn.icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+}
+
+.btn.link {
+    background: transparent;
+    border: 0;
+    padding: 8px 0;
+    color: var(--muted);
+}
+
+.btn.link.danger {
+    color: var(--danger);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--card) 85%, transparent);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-media img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-top {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* możesz zmienić na 1/1 lub 3/4 */
+    overflow: hidden;
+}
+
+/* Sam obraz – brak rozciągania */
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card {
+    height: 100%;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom {
+    margin-top: auto;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 10px 0 16px;
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field input, .field select, .field textarea {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    padding: 10px 12px;
+    color: var(--text);
+}
+
+.field .error {
+    display: block;
+    min-height: 18px;
+    margin-top: 6px;
+}
+
+.field .error:empty {
+    visibility: hidden;
+}
+
+.check {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--muted);
+}
+
+.error {
+    color: var(--danger);
+}
+
+.success {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.products-grid {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 980px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: 2fr 1fr 1fr auto;
+        align-items: end;
+    }
+}
+
+.modal-backdrop, .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    z-index: 50;
+}
+
+.modal, .drawer {
+    width: min(520px, 100%);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.modal-head, .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-body {
+    padding: 14px;
+}
+
+.modal-foot {
+    padding: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.drawer {
+    width: min(360px, 100%);
+    justify-self: end;
+    height: min(520px, 90vh);
+}
+
+.drawer-nav {
+    display: grid;
+    padding: 14px;
+    gap: 10px;
+}
+
+.drawer-nav a {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.drawer-nav a.active {
+    outline: 2px solid color-mix(in oklab, var(--primary) 40%, transparent);
+}
+
+.qty {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.qty-input {
+    width: 70px;
+    text-align: center;
+}
