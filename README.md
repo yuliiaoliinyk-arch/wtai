@@ -194,7 +194,7 @@ Przeglądarka użytkownika
 ## 1. Sklonuj repozytorium
 
 ```bash
-git clone <URL_REPOZYTORIUM>
+git clone https://github.com/yuliiaoliinyk-arch/wtai.git kwiatpl
 cd kwiatpl
 ```
 
